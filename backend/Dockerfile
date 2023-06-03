@@ -6,8 +6,8 @@ FROM node:$VERSION_ARG
 ENV PORT $PORT_ARG
 
 WORKDIR /app
-COPY package.json ./
-COPY . ./
+COPY ./package.json ./
+COPY ./ ./
 
 RUN rm -rf node_modules && npm install --legacy-peer-deps
 #RUN npm install webpack webpack-cli -g
