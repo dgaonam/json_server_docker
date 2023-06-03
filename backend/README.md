@@ -5,6 +5,6 @@ Iniciar contenedor<br/>
 docker-compose up -d <br/>
 detener contenedor <br/>
 docker-compose down <br/>
-reconstruir 
+reconstruir <br/>
 docker-compose up -d --build <br/>
 
