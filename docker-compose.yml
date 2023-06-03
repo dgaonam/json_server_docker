@@ -6,7 +6,7 @@ services:
     image: curso-practica:v3
     hostname: json_server
     build:
-      context: .
+      context: ./backend
       dockerfile: ./Dockerfile
       args:
           VERSION_ARG: 19
