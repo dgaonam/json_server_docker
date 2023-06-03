@@ -17,6 +17,23 @@ services:
       - network
     volumes:
       - ./backend:/app
+  frontend:
+    container_name: frontend
+    restart: always
+    image: curso-practica-frontend:v4
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+      args:
+          VERSION_ARG: 19
+          PORT_ARG: 3000
+    ports:
+      - "8086:3000"
+    networks:
+      - network
+    volumes:
+      - ./frontend:/app
     
 volumes:
   json_server_data:

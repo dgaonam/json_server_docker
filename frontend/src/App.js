@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axiosClient from "./config/AxiosClient";
 
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -6,14 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css"
 function App() {
 
   const posts = () => {
-    axiosClient.get('/posts')
+    axiosClient.get('/posts/1')
       .then(res => {
         console.log(res);
       });
   };
   
   useEffect(() => {
-  
     posts();
   }, []);
 
