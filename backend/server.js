@@ -2,7 +2,7 @@ const  { initializeApp } = require("firebase/app");
 const { getDatabase,ref,get,child } = require("firebase/database");
 const jsonServer = require('json-server');
 const server = jsonServer.create()
-const router = jsonServer.router('db.json')
+//const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 const fs = require('fs');
 
@@ -59,9 +59,10 @@ async function db(){
   console.log(json);
   const filename = 'db.json';
   fs.writeFileSync(filename, json)
+  server.use(jsonServer.router('db.json'))
 }
 server.use(middlewares)
-server.use(router)
+
 server.listen(port, () => {
   db();
   
